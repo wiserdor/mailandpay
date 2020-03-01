@@ -11,6 +11,8 @@ const passport = require("passport");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mailsRouter = require('./routes/mails');
+var testRouter = require('./routes/test');
+
 
 
 var app = express();
@@ -42,6 +44,7 @@ app.use(cors());
 
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/test', testRouter);
 app.use('/api/mail', passport.authenticate('jwt', {session: false}), mailsRouter);
 
 
