@@ -18,12 +18,12 @@ var testRouter = require('./routes/test');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
 
 //Set up default mongoose connection
 var mongoDB = 'mongodb://127.0.0.1/mailandpay';
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true  });
 
 //Get the default connection
 var db = mongoose.connection;
